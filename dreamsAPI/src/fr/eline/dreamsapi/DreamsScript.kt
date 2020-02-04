@@ -5,8 +5,12 @@ package fr.eline.dreamsapi
 
 class DreamsScript(val name: String, val packagePath: String) {
 
-    fun Exec() {
+    fun loadFromJson(jsonScript: Map<String, Any>){
+        addLogInfo("loading ${packagePath}.${name} script...")
+    }
 
+    fun exec() {
+        addLogDebug("test")
     }
 
 }
