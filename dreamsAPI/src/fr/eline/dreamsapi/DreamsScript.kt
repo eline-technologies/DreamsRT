@@ -22,8 +22,9 @@ class DreamsScript(val name: String, val packagePath: String) {
         }
     }
 
-    fun exec() {
+    fun exec(): Int {
         addLogDebug("test")
+        return 0
     }
 
 }

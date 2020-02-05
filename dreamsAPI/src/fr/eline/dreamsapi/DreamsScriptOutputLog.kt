@@ -12,6 +12,10 @@ fun getDreamsScriptOutput(): String {
     return DreamsScriptOutput
 }
 
+fun clearDreamsScriptOutput() {
+    DreamsScriptOutput = ""
+}
+
 fun addLogError(message: String){
     val msg = "ERROR ${message}"
     DreamsScriptOutput += "${msg}\n"

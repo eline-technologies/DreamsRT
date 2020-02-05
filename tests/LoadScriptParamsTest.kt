@@ -1,5 +1,4 @@
 import fr.eline.dreamsapi.DreamsScriptInterpreter
-import fr.eline.dreamsapi.getDreamsScriptOutput
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
@@ -7,13 +6,14 @@ import kotlin.test.assertNotNull
 // Author: Nourredine OCTEAU
 // éline Technologies 2020
 
-internal class ExecAppTest {
+internal class LoadScriptParamsTest {
 
     @Test
-    fun loadAndExecHelloworldApp(){
+    fun loadParamsTest() {
         val script = DreamsScriptInterpreter().loadScript("tests_resources/HelloWorldDreamsScript.vApp/Scripts/main.dreamsscript")
         assertNotNull(script)
-        assertEquals(0, script?.exec())
+        assertNotNull(script?.scriptParameters)
+        assertEquals(1, script?.scriptParameters?.count())
     }
 
 }
