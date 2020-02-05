@@ -15,7 +15,9 @@ class DreamsScriptInterpreter {
             val jsonText = file.readText()
             val type = object : TypeToken<Map<String, Any>>() {}.type
             val scriptJson: Map<String, Any> = Gson().fromJson(jsonText, type)
-            return DreamsScript(scriptJson["name"] as String, scriptJson["package"] as String);
+            val script = DreamsScript(scriptJson["name"] as String, scriptJson["package"] as String)
+            script.loadFromJson(scriptJson)
+            return script;
         }
         catch (ex: Exception){
             return null

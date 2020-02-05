@@ -1,4 +1,26 @@
 {
   "name": "Main",
-  "package": "fr.eline.helloworld"
+  "package": "fr.eline.helloworld",
+  "params": [
+    {
+      "name": "is_ok",
+      "type": "bool",
+      "scope": "private",
+      "value": true
+    }
+  ],
+  "methods": [
+    {
+      "name": "#_init",
+      "nodes": [
+        {
+          "node_type": "get",
+          "param_name": "is_ok"
+        },
+        {
+          "node_type": "if"
+        }
+      ]
+    }
+  ]
 }
