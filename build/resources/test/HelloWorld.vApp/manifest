@@ -1,5 +1,0 @@
-AppName=Hello World
-Identifier=com.elineos.helloworld
-Version=1.0.0
-Icon=icon.png
-Exec=java -jar helloworld.jar

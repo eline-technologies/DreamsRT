@@ -1,13 +1,0 @@
-I2020.02.07 06:46:09.706 INFO loading fr.eline.helloworld.Main script...
-S2020.02.07 06:46:09.710 DEBUG Loaded script parameter : private bool is_ok = true
-$2020.02.07 06:46:09.711 DEBUG test
-I2020.02.07 06:46:09.714 INFO loading fr.eline.helloworld.Main script...
-S2020.02.07 06:46:09.715 DEBUG Loaded script parameter : private bool is_ok = true
-I2020.02.07 06:46:09.719 INFO loading fr.eline.helloworld.Main script...
-S2020.02.07 06:46:09.720 DEBUG Loaded script parameter : private bool is_ok = true
-	42020.02.07 06:46:09.723 DEBUG add a debug log line
-	
-42020.02.07 06:46:09.725 DEBUG add a debug log line
-	32020.02.07 06:46:09.726 INFO add an info log line
-	92020.02.07 06:46:09.727 WARNING add an warning log line
-	52020.02.07 06:46:09.727 ERROR add an error log line
