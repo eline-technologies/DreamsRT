@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LoadScriptParamsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-02-07T17:46:09" hostname="DESKTOP-PT02E7U" time="0.002">
+  <properties/>
+  <testcase name="loadParamsTest" classname="LoadScriptParamsTest" time="0.002"/>
+  <system-out><![CDATA[2020.02.07 06:46:09.719 INFO loading fr.eline.helloworld.Main script...
+2020.02.07 06:46:09.720 DEBUG Loaded script parameter : private bool is_ok = true
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
