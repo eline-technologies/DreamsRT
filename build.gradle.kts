@@ -23,4 +23,10 @@ tasks {
     compileTestKotlin {
         kotlinOptions.jvmTarget = "11"
     }
+    jacocoTestReport {
+        reports {
+            xml.isEnabled = true
+            html.isEnabled = false
+        }
+    }
 }
