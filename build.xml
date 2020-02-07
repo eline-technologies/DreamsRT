@@ -32,14 +32,14 @@
     <exclude name="**/vssver2.scc/**"/>
   </patternset>
   <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.swc"/>
+    <include name="*.zip"/>
     <include name="*.egg"/>
+    <include name="*.ane"/>
     <include name="*.jar"/>
     <include name="*.ear"/>
     <include name="*.klib"/>
-    <include name="*.swc"/>
-    <include name="*.war"/>
-    <include name="*.zip"/>
-    <include name="*.ane"/>
   </patternset>
   <patternset id="compiler.resources">
     <exclude name="**/?*.java"/>
@@ -95,6 +95,7 @@
       <include name="../jbr!/jdk.crypto.cryptoki"/>
       <include name="../jbr!/jdk.crypto.ec"/>
       <include name="../jbr!/jdk.dynalink"/>
+      <include name="../jbr!/jdk.hotspot.agent"/>
       <include name="../jbr!/jdk.httpserver"/>
       <include name="../jbr!/jdk.internal.ed"/>
       <include name="../jbr!/jdk.internal.jvmstat"/>
@@ -133,26 +134,26 @@
   <!-- Project Libraries -->
   
   <path id="library.com.google.code.gson:gson:2.8.6.classpath">
-    <pathelement location="${path.variable.maven_repository}/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar"/>
+    <pathelement location="${basedir}/lib/gson-2.8.6.jar"/>
   </path>
   
   <path id="library.kotlinjavaruntime.classpath">
-    <pathelement location="${basedir}/lib/kotlin-reflect.jar"/>
-    <pathelement location="${basedir}/lib/kotlin-stdlib-jdk7.jar"/>
-    <pathelement location="${basedir}/lib/kotlin-stdlib-jdk8.jar"/>
-    <pathelement location="${basedir}/lib/kotlin-stdlib.jar"/>
-    <pathelement location="${basedir}/lib/kotlin-test.jar"/>
+    <pathelement location="${path.variable.kotlin_bundled}/lib/kotlin-reflect.jar"/>
+    <pathelement location="${path.variable.kotlin_bundled}/lib/kotlin-stdlib-jdk7.jar"/>
+    <pathelement location="${path.variable.kotlin_bundled}/lib/kotlin-stdlib-jdk8.jar"/>
+    <pathelement location="${path.variable.kotlin_bundled}/lib/kotlin-stdlib.jar"/>
+    <pathelement location="${path.variable.kotlin_bundled}/lib/kotlin-test.jar"/>
   </path>
   
-  <path id="library.org.junit.jupiter:junit-jupiter:5.4.2.classpath">
-    <pathelement location="${path.variable.maven_repository}/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar"/>
-    <pathelement location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-api/5.4.2/junit-jupiter-api-5.4.2.jar"/>
-    <pathelement location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-engine/5.4.2/junit-jupiter-engine-5.4.2.jar"/>
-    <pathelement location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-params/5.4.2/junit-jupiter-params-5.4.2.jar"/>
-    <pathelement location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter/5.4.2/junit-jupiter-5.4.2.jar"/>
-    <pathelement location="${path.variable.maven_repository}/org/junit/platform/junit-platform-commons/1.4.2/junit-platform-commons-1.4.2.jar"/>
-    <pathelement location="${path.variable.maven_repository}/org/junit/platform/junit-platform-engine/1.4.2/junit-platform-engine-1.4.2.jar"/>
-    <pathelement location="${path.variable.maven_repository}/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar"/>
+  <path id="library.org.junit.jupiter:junit-jupiter:5.6.0.classpath">
+    <pathelement location="${basedir}/lib/apiguardian-api-1.1.0.jar"/>
+    <pathelement location="${basedir}/lib/junit-jupiter-5.6.0.jar"/>
+    <pathelement location="${basedir}/lib/junit-jupiter-api-5.6.0.jar"/>
+    <pathelement location="${basedir}/lib/junit-jupiter-engine-5.6.0.jar"/>
+    <pathelement location="${basedir}/lib/junit-jupiter-params-5.6.0.jar"/>
+    <pathelement location="${basedir}/lib/junit-platform-commons-1.6.0.jar"/>
+    <pathelement location="${basedir}/lib/junit-platform-engine-1.6.0.jar"/>
+    <pathelement location="${basedir}/lib/opentest4j-1.2.0.jar"/>
   </path>
   <!-- Register Custom Compiler Taskdefs -->
   <property name="javac2.home" value="${idea.home}/lib"/>
@@ -177,9 +178,9 @@
   <dirname property="module.dreamsapi.basedir" file="${ant.file}"/>
   
   
-  <property name="module.jdk.home.dreamsapi" value="${project.jdk.home}"/>
-  <property name="module.jdk.bin.dreamsapi" value="${project.jdk.bin}"/>
-  <property name="module.jdk.classpath.dreamsapi" value="${project.jdk.classpath}"/>
+  <property name="module.jdk.home.dreamsapi" value="${jdk.home.11}"/>
+  <property name="module.jdk.bin.dreamsapi" value="${jdk.bin.11}"/>
+  <property name="module.jdk.classpath.dreamsapi" value="jdk.classpath.11"/>
   
   <property name="compiler.args.dreamsapi" value="-encoding UTF-8 -source 11 -target 11 ${compiler.args}"/>
   
@@ -265,9 +266,9 @@
   <dirname property="module.dreamsrt.basedir" file="${ant.file}"/>
   
   
-  <property name="module.jdk.home.dreamsrt" value="${project.jdk.home}"/>
-  <property name="module.jdk.bin.dreamsrt" value="${project.jdk.bin}"/>
-  <property name="module.jdk.classpath.dreamsrt" value="${project.jdk.classpath}"/>
+  <property name="module.jdk.home.dreamsrt" value="${jdk.home.11}"/>
+  <property name="module.jdk.bin.dreamsrt" value="${jdk.bin.11}"/>
+  <property name="module.jdk.classpath.dreamsrt" value="jdk.classpath.11"/>
   
   <property name="compiler.args.dreamsrt" value="-encoding UTF-8 -source 11 -target 11 ${compiler.args}"/>
   
@@ -282,7 +283,7 @@
     <path refid="${module.jdk.classpath.dreamsrt}"/>
     <path refid="library.kotlinjavaruntime.classpath"/>
     <pathelement location="${dreamsapi.output.dir}"/>
-    <path refid="library.org.junit.jupiter:junit-jupiter:5.4.2.classpath"/>
+    <path refid="library.org.junit.jupiter:junit-jupiter:5.6.0.classpath"/>
   </path>
   
   <path id="dreamsrt.runtime.production.module.classpath">
@@ -290,7 +291,7 @@
     <path refid="library.kotlinjavaruntime.classpath"/>
     <pathelement location="${dreamsapi.output.dir}"/>
     <path refid="library.com.google.code.gson:gson:2.8.6.classpath"/>
-    <path refid="library.org.junit.jupiter:junit-jupiter:5.4.2.classpath"/>
+    <path refid="library.org.junit.jupiter:junit-jupiter:5.6.0.classpath"/>
   </path>
   
   <path id="dreamsrt.module.classpath">
@@ -307,7 +308,7 @@
     <pathelement location="${path.variable.maven_repository}/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar"/>
     <pathelement location="${dreamsapi.testoutput.dir}"/>
     <pathelement location="${dreamsapi.output.dir}"/>
-    <path refid="library.org.junit.jupiter:junit-jupiter:5.4.2.classpath"/>
+    <path refid="library.org.junit.jupiter:junit-jupiter:5.6.0.classpath"/>
   </path>
   
   <path id="dreamsrt.runtime.module.classpath">
@@ -325,7 +326,7 @@
     <pathelement location="${dreamsapi.testoutput.dir}"/>
     <pathelement location="${dreamsapi.output.dir}"/>
     <path refid="library.com.google.code.gson:gson:2.8.6.classpath"/>
-    <path refid="library.org.junit.jupiter:junit-jupiter:5.4.2.classpath"/>
+    <path refid="library.org.junit.jupiter:junit-jupiter:5.6.0.classpath"/>
   </path>
   
   
