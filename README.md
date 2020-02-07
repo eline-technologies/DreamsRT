@@ -1,0 +1,2 @@
+# DreamsRT  [![Build Status](https://travis-ci.org/eline-technologies/DreamsRT.svg?branch=master)](https://travis-ci.org/eline-technologies/DreamsRT)
+Dreams Runtime is the runtime for élineOS vApp coded in DreamsScript
