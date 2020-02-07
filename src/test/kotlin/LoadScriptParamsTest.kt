@@ -1,6 +1,8 @@
 import fr.eline.dreamsapi.DreamsScriptInterpreter
+import fr.eline.dreamsapi.clearDreamsScriptOutput
 import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertNotNull
+import org.junit.After
 import org.junit.Test
 
 // Author: Nourredine OCTEAU
@@ -14,6 +16,11 @@ internal class LoadScriptParamsTest {
         assertNotNull(script)
         assertNotNull(script?.scriptParameters)
         assertEquals(1, script?.scriptParameters?.count())
+    }
+
+    @After
+    fun clearAllOutputLog() {
+        clearDreamsScriptOutput()
     }
 
 }

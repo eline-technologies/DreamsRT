@@ -1,5 +1,6 @@
 import fr.eline.dreamsapi.*
 import junit.framework.Assert.assertEquals
+import org.junit.After
 import org.junit.Test
 
 // Author: Nourredine OCTEAU
@@ -13,7 +14,6 @@ internal class SystemLogsTest {
         val expectedLogLine = "DEBUG ${debugLine}\n"
         addLogDebug(debugLine)
         assertEquals(expectedLogLine, getDreamsScriptOutput())
-        clearDreamsScriptOutput()
     }
 
     @Test
@@ -22,7 +22,6 @@ internal class SystemLogsTest {
         val expectedLogLine = "INFO ${infoLine}\n"
         addLogInfo(infoLine)
         assertEquals(expectedLogLine, getDreamsScriptOutput())
-        clearDreamsScriptOutput()
     }
 
     @Test
@@ -31,7 +30,6 @@ internal class SystemLogsTest {
         val expectedLogLine = "WARNING ${warningLine}\n"
         addLogWarning(warningLine)
         assertEquals(expectedLogLine, getDreamsScriptOutput())
-        clearDreamsScriptOutput()
     }
 
     @Test
@@ -40,7 +38,6 @@ internal class SystemLogsTest {
         val expectedLogLine = "ERROR ${errorLine}\n"
         addLogError(errorLine)
         assertEquals(expectedLogLine, getDreamsScriptOutput())
-        clearDreamsScriptOutput()
     }
 
     @Test
@@ -50,6 +47,11 @@ internal class SystemLogsTest {
         addLogDebug(debugLine)
         clearDreamsScriptOutput()
         assertEquals("", getDreamsScriptOutput())
+    }
+
+    @After
+    fun clearAllOutputLog() {
+        clearDreamsScriptOutput()
     }
 
 }
