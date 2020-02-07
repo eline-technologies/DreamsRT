@@ -7,7 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests_resources" type="java-test-resource" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
     <orderEntry type="module-library" scope="TEST">
@@ -27,6 +27,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="dreamsAPI" exported="" />
-    <orderEntry type="library" name="org.junit.jupiter:junit-jupiter:5.4.2" level="project" />
+    <orderEntry type="library" name="org.junit.jupiter:junit-jupiter:5.6.0" level="project" />
   </component>
 </module>
