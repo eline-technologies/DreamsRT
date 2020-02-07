@@ -459,4 +459,6 @@
   </target>
   
   <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+
+  <target name="test" depends="build.modules, build.all.artifacts" description="build tests"/>
 </project>
