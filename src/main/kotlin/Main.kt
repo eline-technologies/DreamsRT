@@ -12,6 +12,6 @@ fun main(args: Array<String>) {
 
     when {
         args.count() == 0 -> println("Error: A vApp file must be specified in command argument")
-        else -> DreamsScriptInterpreter().loadScript("${args.first()}/Scripts/main.dreamsscript")?.Exec()
+        else -> DreamsScriptInterpreter().loadScript("${args.first()}/Scripts/main.dreamsscript")?.exec()
     }
 }
