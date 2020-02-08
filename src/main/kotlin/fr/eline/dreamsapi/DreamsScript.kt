@@ -7,18 +7,27 @@ import kotlin.collections.ArrayList
 
 class DreamsScript(val name: String, val packagePath: String) {
 
-    val scriptParameters: ArrayList<DreamsScriptParameter> = ArrayList<DreamsScriptParameter>()
+    val scriptParameters: ArrayList<DreamsScriptParameter> = ArrayList()
 
-    fun loadFromJson(jsonScript: Map<String, Any>){
+    val scriptMethods: ArrayList<DreamsScriptMethod> = ArrayList()
+
+    fun loadFromJson(dreamsScriptFile: DreamsScriptFile){
         addLogInfo("loading ${packagePath}.${name} script...")
-        loadAllScriptParams(jsonScript["params"] as ArrayList<Map<String, Any>>)
+        loadAllScriptParams(dreamsScriptFile.params)
+        loadAllScriptMethods(dreamsScriptFile.methods)
     }
 
-    private fun loadAllScriptParams(allParams: ArrayList<Map<String, Any>>){
+    private fun loadAllScriptParams(allParams: List<DreamsScriptParameter>){
         for(param in allParams){
-            val p = DreamsScriptParameter(param["name"] as String, param["type"] as String, param["scope"] as String, param["value"] as Any)
-            scriptParameters.add(p)
-            addLogDebug("Loaded script parameter: ${p.scope} ${p.type} ${p.name} = ${p.value}")
+            scriptParameters.add(param)
+            addLogDebug("Loaded script parameter: ${param.scope} ${param.type} ${param.name} = ${param.value}")
+        }
+    }
+
+    private fun loadAllScriptMethods(allMethods: List<DreamsScriptMethod>){
+        for(method in allMethods){
+            scriptMethods.add(method)
+            addLogDebug("Loaded script method: ${method.name}")
         }
     }
 

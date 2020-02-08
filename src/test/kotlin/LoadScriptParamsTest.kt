@@ -1,4 +1,4 @@
-import fr.eline.dreamsapi.DreamsScriptInterpreter
+import fr.eline.dreamsapi.DreamsScriptLoader
 import fr.eline.dreamsapi.clearDreamsScriptOutput
 import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertNotNull
@@ -12,7 +12,7 @@ internal class LoadScriptParamsTest {
 
     @Test
     fun loadParamsTest() {
-        val script = DreamsScriptInterpreter().loadScript("src/test/resources/HelloWorldDreamsScript.vApp/Scripts/main.dreamsscript")
+        val script = DreamsScriptLoader().loadScript("src/test/resources/HelloWorldDreamsScript.vApp/Scripts/main.dreamsscript")
         assertNotNull(script)
         assertNotNull(script?.scriptParameters)
         assertEquals(1, script?.scriptParameters?.count())

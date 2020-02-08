@@ -1,4 +1,4 @@
-import fr.eline.dreamsapi.DreamsScriptInterpreter
+import fr.eline.dreamsapi.DreamsScriptLoader
 import fr.eline.dreamsapi.addLogError
 
 // Author: Nourredine OCTEAU
@@ -13,6 +13,16 @@ fun main(args: Array<String>) {
 
     when {
         args.count() == 0 -> addLogError("A vApp file must be specified in command argument")
-        else -> DreamsScriptInterpreter().loadScript("${args.first()}/Scripts/main.dreamsscript")?.exec()
+        else -> {
+            val script = DreamsScriptLoader().loadScript("${args.first()}/Scripts/main.dreamsscript")
+            if(script == null)
+            {
+                addLogError("Unable to parse script. File content is invalid.")
+                return
+            }
+            else {
+                script?.exec()
+            }
+        }
     }
 }

@@ -1,8 +1,5 @@
-import fr.eline.dreamsapi.DreamsScriptInterpreter
 import fr.eline.dreamsapi.clearDreamsScriptOutput
 import fr.eline.dreamsapi.getDreamsScriptOutput
-import junit.framework.Assert.assertEquals
-import junit.framework.Assert.assertNotNull
 import org.junit.After
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -24,6 +21,13 @@ internal class ExecAppTest {
         val args: Array<String> = emptyArray()
         main(args)
         assertTrue(getDreamsScriptOutput().contains("ERROR A vApp file must be specified in command argument"))
+    }
+
+    @Test
+    fun loadAndExecInvalidScriptAppArgs(){
+        val args: Array<String> = Array(1) { "src/test/resources/HelloWorldDreamsInvalidScript.vApp" }
+        main(args)
+        assertTrue(getDreamsScriptOutput().contains("ERROR Unable to parse script. File content is invalid."))
     }
 
     @After
