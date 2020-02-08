@@ -1,8 +1,5 @@
-import fr.eline.dreamsapi.DreamsScriptInterpreter
 import fr.eline.dreamsapi.clearDreamsScriptOutput
 import fr.eline.dreamsapi.getDreamsScriptOutput
-import junit.framework.Assert.assertEquals
-import junit.framework.Assert.assertNotNull
 import org.junit.After
 import org.junit.Assert.assertTrue
 import org.junit.Test

@@ -1,9 +1,8 @@
-import fr.eline.dreamsapi.DreamsScriptInterpreter
+import fr.eline.dreamsapi.DreamsScriptLoader
 import fr.eline.dreamsapi.clearDreamsScriptOutput
 import junit.framework.Assert.assertNull
 import junit.framework.Assert.assertNotNull
 import org.junit.After
-import org.junit.BeforeClass
 import org.junit.Test
 
 // Author: Nourredine OCTEAU
@@ -13,13 +12,13 @@ internal class LoadAppTest {
 
     @Test
     fun loadValidAppTest() {
-        val script = DreamsScriptInterpreter().loadScript("src/test/resources/HelloWorldDreamsScript.vApp/Scripts/main.dreamsscript")
+        val script = DreamsScriptLoader().loadScript("src/test/resources/HelloWorldDreamsScript.vApp/Scripts/main.dreamsscript")
         assertNotNull(script)
     }
 
     @Test
     fun loadInvalidAppTest() {
-        val script = DreamsScriptInterpreter().loadScript("blahblah.txt")
+        val script = DreamsScriptLoader().loadScript("blahblah.txt")
         assertNull(script)
     }
 

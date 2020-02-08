@@ -7,7 +7,7 @@ import java.io.File
 // Author: Nourredine OCTEAU
 // éline Technologies 2020
 
-class DreamsScriptInterpreter {
+class DreamsScriptLoader {
 
     fun loadScript(scriptFilename: String) : DreamsScript? {
         val file = File(scriptFilename)
