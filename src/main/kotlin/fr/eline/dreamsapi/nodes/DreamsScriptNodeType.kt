@@ -4,7 +4,7 @@ package fr.eline.dreamsapi.nodes
 // éline Technologies 2020
 
 enum class DreamsScriptNodeType(val typeName: String) {
-    Get("get"),
-    If("if"),
-    PrintText("printText")
+    Get("Get"),
+    If("If"),
+    PrintText("PrintText")
 }
