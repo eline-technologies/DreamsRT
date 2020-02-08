@@ -18,7 +18,7 @@ class DreamsScript(val name: String, val packagePath: String) {
         for(param in allParams){
             val p = DreamsScriptParameter(param["name"] as String, param["type"] as String, param["scope"] as String, param["value"] as Any)
             scriptParameters.add(p)
-            addLogDebug("Loaded script parameter : ${p.scope} ${p.type} ${p.name} = ${p.value}")
+            addLogDebug("Loaded script parameter: ${p.scope} ${p.type} ${p.name} = ${p.value}")
         }
     }
 

@@ -1,4 +1,5 @@
 import fr.eline.dreamsapi.DreamsScriptInterpreter
+import fr.eline.dreamsapi.addLogError
 
 // Author: Nourredine OCTEAU
 // éline Technologies 2020
@@ -11,7 +12,7 @@ fun main(args: Array<String>) {
     println()
 
     when {
-        args.count() == 0 -> println("Error: A vApp file must be specified in command argument")
+        args.count() == 0 -> addLogError("A vApp file must be specified in command argument")
         else -> DreamsScriptInterpreter().loadScript("${args.first()}/Scripts/main.dreamsscript")?.exec()
     }
 }

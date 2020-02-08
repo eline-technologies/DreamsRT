@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "1.3.61"
+    jacoco
 }
 
 group = "fr.eline.dreamsrt"
@@ -21,5 +22,12 @@ tasks {
     }
     compileTestKotlin {
         kotlinOptions.jvmTarget = "11"
+    }
+    jacocoTestReport {
+        reports {
+            xml.isEnabled = true
+            xml.destination = File("${buildDir}/reports/jacoco/report.xml")
+            html.isEnabled = false
+        }
     }
 }
