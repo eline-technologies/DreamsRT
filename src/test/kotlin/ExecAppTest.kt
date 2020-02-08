@@ -23,6 +23,13 @@ internal class ExecAppTest {
         assertTrue(getDreamsScriptOutput().contains("ERROR A vApp file must be specified in command argument"))
     }
 
+    @Test
+    fun loadAndExecInvalidScriptAppArgs(){
+        val args: Array<String> = Array(1) { "src/test/resources/HelloWorldDreamsInvalidScript.vApp" }
+        main(args)
+        assertTrue(getDreamsScriptOutput().contains("ERROR Unable to parse script. File content is invalid."))
+    }
+
     @After
     fun clearAllOutputLog() {
         clearDreamsScriptOutput()
