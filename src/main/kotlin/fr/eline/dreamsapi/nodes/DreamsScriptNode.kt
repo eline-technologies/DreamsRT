@@ -8,7 +8,7 @@ import java.util.*
 
 open class DreamsScriptNode (open val uid: UUID,
                              @SerializedName("node_type") private val _nodeType: String,
-                             open val flags: String = "") {
+                             open val flags: String) {
     val nodeType
     get() = DreamsScriptNodeType.valueOf(_nodeType)
 }

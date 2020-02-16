@@ -30,6 +30,13 @@ internal class ExecAppTest {
         assertTrue(getDreamsScriptOutput().contains("ERROR Unable to parse script. File content is invalid."))
     }
 
+    @Test
+    fun loadAndExecScriptWithoutInitMethodAppArgs(){
+        val args: Array<String> = Array(1) { "src/test/resources/HelloWorldDreamsScriptWithoutInitMethod.vApp" }
+        main(args)
+        assertTrue(getDreamsScriptOutput().contains("ERROR Script executed with error -1."))
+    }
+
     @After
     fun clearAllOutputLog() {
         clearDreamsScriptOutput()

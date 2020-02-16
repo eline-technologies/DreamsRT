@@ -1,5 +1,6 @@
 import fr.eline.dreamsapi.DreamsScriptLoader
 import fr.eline.dreamsapi.addLogError
+import fr.eline.dreamsapi.addLogInfo
 
 // Author: Nourredine OCTEAU
 // éline Technologies 2020
@@ -21,7 +22,11 @@ fun main(args: Array<String>) {
                 return
             }
             else {
-                script.exec()
+                val retCode = script.exec()
+                when (retCode) {
+                    0 -> addLogInfo("Script successfully executed.")
+                    else -> addLogError("Script executed with error ${retCode}.")
+                }
             }
         }
     }
