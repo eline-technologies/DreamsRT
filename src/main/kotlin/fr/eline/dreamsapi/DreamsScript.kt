@@ -26,14 +26,20 @@ class DreamsScript(val name: String, val packagePath: String) {
 
     private fun loadAllScriptMethods(allMethods: List<DreamsScriptMethod>){
         for(method in allMethods){
+            method.loadNodes()
             scriptMethods.add(method)
             addLogDebug("Loaded script method: ${method.name}")
         }
     }
 
     fun exec(): Int {
-        addLogDebug("test")
-        return 0
+        val initMethod = scriptMethods.firstOrNull { it.name == "#_init" }
+        if (initMethod != null) {
+            return initMethod.exec()
+        }
+        else {
+            return -1;
+        }
     }
 
 }

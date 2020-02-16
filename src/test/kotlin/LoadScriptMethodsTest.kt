@@ -17,6 +17,16 @@ internal class LoadScriptMethodsTest {
         Assert.assertEquals(1, script?.scriptMethods?.count())
     }
 
+    @Test
+    fun loadMethodNodesTest() {
+        val script = DreamsScriptLoader().loadScript("src/test/resources/HelloWorldDreamsScript.vApp/Scripts/main.dreamsscript")
+        Assert.assertNotNull(script)
+        Assert.assertNotNull(script?.scriptMethods)
+        Assert.assertEquals(1, script?.scriptMethods?.count())
+        Assert.assertNotNull(script?.scriptMethods?.first()?.allNodes)
+        Assert.assertEquals(4, script?.scriptMethods?.first()?.allNodes?.count())
+    }
+
     @After
     fun clearAllOutputLog() {
         clearDreamsScriptOutput()

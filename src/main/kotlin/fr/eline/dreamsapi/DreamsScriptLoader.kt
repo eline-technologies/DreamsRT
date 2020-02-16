@@ -18,7 +18,7 @@ class DreamsScriptLoader {
             script.loadFromJson(scriptFile)
             return script;
         }
-        catch (ex: Exception){
+        catch (ex: Exception) {
             return null
         }
     }

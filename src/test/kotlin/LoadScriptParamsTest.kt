@@ -15,7 +15,7 @@ internal class LoadScriptParamsTest {
         val script = DreamsScriptLoader().loadScript("src/test/resources/HelloWorldDreamsScript.vApp/Scripts/main.dreamsscript")
         assertNotNull(script)
         assertNotNull(script?.scriptParameters)
-        assertEquals(1, script?.scriptParameters?.count())
+        assertEquals(2, script?.scriptParameters?.count())
     }
 
     @After

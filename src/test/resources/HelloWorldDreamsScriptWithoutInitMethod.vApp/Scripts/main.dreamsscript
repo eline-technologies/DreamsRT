@@ -17,7 +17,7 @@
   ],
   "methods": [
     {
-      "name": "#_init",
+      "name": "noinitname",
       "nodes": [
         {
           "uid": "75a6ffb0-839d-4ee0-bbff-29539bc8f671",

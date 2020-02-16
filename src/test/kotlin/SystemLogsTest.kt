@@ -43,10 +43,10 @@ internal class SystemLogsTest {
     @Test
     fun clearLogTest(){
         val debugLine = "add a debug log line"
-        val expectedLogLine = "DEBUG ${debugLine}\n"
+        val expectedLogLine = ""
         addLogDebug(debugLine)
         clearDreamsScriptOutput()
-        assertEquals("", getDreamsScriptOutput())
+        assertEquals(expectedLogLine, getDreamsScriptOutput())
     }
 
     @After
