@@ -21,7 +21,7 @@ fun main(args: Array<String>) {
                 return
             }
             else {
-                script?.exec()
+                script.exec()
             }
         }
     }

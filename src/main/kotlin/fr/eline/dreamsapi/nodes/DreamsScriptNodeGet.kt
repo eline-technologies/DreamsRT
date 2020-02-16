@@ -6,6 +6,6 @@ import java.util.*
 // Author: Nourredine OCTEAU
 // éline Technologies 2020
 
-class DreamsScriptNodeGet(override val uid: UUID, val param_name: String) : DreamsScriptNode(uid, DreamsScriptNodeType.Get.typeName){
-    constructor(param_name: String) : this(UUID.randomUUID(), param_name)
+class DreamsScriptNodeGet(override val uid: UUID, val param_name: String, override val flags: String) : DreamsScriptNode(uid, DreamsScriptNodeType.Get.typeName, flags){
+    constructor(param_name: String, flags: String = "") : this(UUID.randomUUID(), param_name, flags)
 }
