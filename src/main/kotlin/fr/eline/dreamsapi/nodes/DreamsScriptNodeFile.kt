@@ -18,7 +18,7 @@ class DreamsScriptNodeFile (val uid: UUID,
         when (nodeType){
             DreamsScriptNodeType.Get -> return DreamsScriptNodeGet(uid, paramName, flags?:"")
             DreamsScriptNodeType.If -> return DreamsScriptNodeIf(uid, flags?:"")
-            DreamsScriptNodeType.PrintText -> return null
+            DreamsScriptNodeType.PrintText -> return DreamsScriptNodePrintText(uid, flags?:"")
             else -> return null
         }
     }

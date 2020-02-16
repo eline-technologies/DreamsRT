@@ -7,7 +7,9 @@ import fr.eline.dreamsapi.nodes.DreamsScriptNodeFile
 // Author: Nourredine OCTEAU
 // éline Technologies 2020
 
-class DreamsScriptMethod(val name: String, @SerializedName("nodes") private val _nodes: List<DreamsScriptNodeFile>, private var _allNodes: ArrayList<DreamsScriptNode>) {
+class DreamsScriptMethod(val name: String,
+                         @SerializedName("nodes") private val _nodes: List<DreamsScriptNodeFile>,
+                         private var _allNodes: ArrayList<DreamsScriptNode>) {
 
     val allNodes: ArrayList<DreamsScriptNode>
         get() = _allNodes
