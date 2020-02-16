@@ -35,7 +35,7 @@ class DreamsScript(val name: String, val packagePath: String) {
     fun exec(): Int {
         val initMethod = scriptMethods.firstOrNull { it.name == "#_init" }
         if (initMethod != null) {
-            return initMethod.exec()
+            return initMethod.exec(this)
         }
         else {
             return -1;

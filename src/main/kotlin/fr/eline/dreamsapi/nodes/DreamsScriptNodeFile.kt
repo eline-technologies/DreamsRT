@@ -14,7 +14,7 @@ class DreamsScriptNodeFile (val uid: UUID,
     val nodeType
     get() = DreamsScriptNodeType.valueOf(_nodeType)
 
-    fun GetNodeInstance(): DreamsScriptNode? {
+    fun getNodeInstance(): DreamsScriptNode? {
         when (nodeType){
             DreamsScriptNodeType.Get -> return DreamsScriptNodeGet(uid, paramName, flags?:"")
             DreamsScriptNodeType.If -> return DreamsScriptNodeIf(uid, flags?:"")

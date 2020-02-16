@@ -1,6 +1,7 @@
 package fr.eline.dreamsapi.nodes
 
 import com.google.gson.annotations.SerializedName
+import fr.eline.dreamsapi.DreamsScript
 import java.util.*
 
 // Author: Nourredine OCTEAU
@@ -8,5 +9,7 @@ import java.util.*
 
 class DreamsScriptNodeIf(override val uid: UUID,
                          override val flags: String = "") : DreamsScriptNode(uid, DreamsScriptNodeType.If.typeName, flags){
+
     constructor(flags: String) : this(UUID.randomUUID(), flags)
+
 }

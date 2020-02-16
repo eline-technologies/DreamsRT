@@ -17,11 +17,16 @@ class DreamsScriptMethod(val name: String,
     fun loadNodes() {
         _allNodes = arrayListOf()
         for(n in _nodes){
-            n.GetNodeInstance()?.let { _allNodes.add(it) }
+            n.getNodeInstance()?.let { _allNodes.add(it) }
         }
     }
 
-    fun exec() : Int {
-        return 0;
+    fun exec(scriptHost: DreamsScript) : Int {
+        val startNode = allNodes.firstOrNull({it.flags == "#_method_start"})
+        if(startNode != null){
+            return startNode.exec(scriptHost)
+        } else{
+            return -2
+        }
     }
 }
