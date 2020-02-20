@@ -65,6 +65,7 @@
           "args_in": [
             "8f0bdc21-02fa-4718-bf5c-116e5314a0f4"
           ],
+          "next_nodes":[],
           "prev_nodes": [
             "bdc524f2-40ff-4f4f-92e5-84aa3ee52743"
           ]

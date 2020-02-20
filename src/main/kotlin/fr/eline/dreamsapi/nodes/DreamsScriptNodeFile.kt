@@ -9,16 +9,17 @@ import java.util.*
 class DreamsScriptNodeFile (val uid: UUID,
                             @SerializedName("node_type") private val _nodeType: String,
                             @SerializedName("param_name") val paramName: String,
-                            val flags:String = "") {
+                            val flags:String = "",
+                            val next_nodes: ArrayList<UUID>) {
 
     val nodeType
     get() = DreamsScriptNodeType.valueOf(_nodeType)
 
     fun getNodeInstance(): DreamsScriptNode? {
         when (nodeType){
-            DreamsScriptNodeType.Get -> return DreamsScriptNodeGet(uid, paramName, flags?:"")
-            DreamsScriptNodeType.If -> return DreamsScriptNodeIf(uid, flags?:"")
-            DreamsScriptNodeType.PrintText -> return DreamsScriptNodePrintText(uid, flags?:"")
+            DreamsScriptNodeType.Get -> return DreamsScriptNodeGet(uid, paramName, flags?:"", next_nodes)
+            DreamsScriptNodeType.If -> return DreamsScriptNodeIf(uid, flags?:"", next_nodes)
+            DreamsScriptNodeType.PrintText -> return DreamsScriptNodePrintText(uid, flags?:"", next_nodes)
             else -> return null
         }
     }

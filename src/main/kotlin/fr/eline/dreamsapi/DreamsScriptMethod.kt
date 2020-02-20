@@ -19,6 +19,11 @@ class DreamsScriptMethod(val name: String,
         for(n in _nodes){
             n.getNodeInstance()?.let { _allNodes.add(it) }
         }
+        orderNodes()
+    }
+
+    private fun orderNodes() {
+        val startNode = allNodes.firstOrNull({it.flags == "#_method_start"})
     }
 
     fun exec(scriptHost: DreamsScript) : Int {
