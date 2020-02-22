@@ -10,7 +10,7 @@ import java.util.*
 
 class DreamsScriptNodePrintText(override val uid: UUID,
                                 override val flags: String,
-                                override val next_nodes: ArrayList<UUID>) : DreamsScriptNode(uid, DreamsScriptNodeType.Get.typeName, flags, next_nodes){
+                                override val next_nodes: ArrayList<UUID>) : DreamsScriptNode(uid, DreamsScriptNodeType.PrintText.typeName, flags, next_nodes){
 
     constructor(flags: String, next_nodes: ArrayList<UUID>) : this(UUID.randomUUID(), flags, next_nodes)
 

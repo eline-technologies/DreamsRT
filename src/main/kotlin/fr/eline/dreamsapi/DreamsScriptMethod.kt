@@ -19,11 +19,23 @@ class DreamsScriptMethod(val name: String,
         for(n in _nodes){
             n.getNodeInstance()?.let { _allNodes.add(it) }
         }
-        orderNodes()
+        orderNodes(null)
     }
 
-    private fun orderNodes() {
-        val startNode = allNodes.firstOrNull({it.flags == "#_method_start"})
+    private fun orderNodes(startNode: DreamsScriptNode?) {
+        var nodeToOrder = startNode
+        if (nodeToOrder == null) {
+            nodeToOrder = allNodes.firstOrNull({ it.flags == "#_method_start" })
+        }
+        if(nodeToOrder != null) {
+            for (nodeUid in nodeToOrder.next_nodes) {
+                val nextNode = allNodes.firstOrNull { it.uid == nodeUid }
+                if(nextNode != null){
+                    nodeToOrder.appendNextNode(nextNode)
+                    orderNodes(nextNode)
+                }
+            }
+        }
     }
 
     fun exec(scriptHost: DreamsScript) : Int {

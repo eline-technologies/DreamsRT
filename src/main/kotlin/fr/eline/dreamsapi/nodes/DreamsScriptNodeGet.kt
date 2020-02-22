@@ -20,8 +20,7 @@ class DreamsScriptNodeGet(override val uid: UUID,
         addLogDebug("Exec node ${uid} of type ${nodeType.typeName}")
         val paramToGet = scriptHost.scriptParameters.firstOrNull({it.name == param_name})
         if(paramToGet != null) {
-
-            return 0
+            return gotoNextNodes(scriptHost)
         } else {
             addLogError("Unable to find script parameter ${param_name}.")
             return -1
