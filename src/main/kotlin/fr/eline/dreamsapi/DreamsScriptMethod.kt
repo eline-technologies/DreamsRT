@@ -3,6 +3,8 @@ package fr.eline.dreamsapi
 import com.google.gson.annotations.SerializedName
 import fr.eline.dreamsapi.nodes.DreamsScriptNode
 import fr.eline.dreamsapi.nodes.DreamsScriptNodeFile
+import java.util.*
+import kotlin.collections.ArrayList
 
 // Author: Nourredine OCTEAU
 // éline Technologies 2020
@@ -38,10 +40,17 @@ class DreamsScriptMethod(val name: String,
         }
     }
 
+    fun setInArgNode(arg_uid: UUID, arg_value: Any) {
+        var node = allNodes.firstOrNull({it.args_in.contains(arg_uid)})
+        if(node != null){
+            node.setInput(arg_uid, arg_value)
+        }
+    }
+
     fun exec(scriptHost: DreamsScript) : Int {
         val startNode = allNodes.firstOrNull({it.flags == "#_method_start"})
         if(startNode != null){
-            return startNode.exec(scriptHost)
+            return startNode.exec(scriptHost, this)
         } else{
             return -2
         }
