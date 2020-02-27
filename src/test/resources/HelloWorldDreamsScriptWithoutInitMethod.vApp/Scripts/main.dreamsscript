@@ -23,6 +23,7 @@
           "uid": "75a6ffb0-839d-4ee0-bbff-29539bc8f671",
           "node_type": "Get",
           "param_name": "is_ok",
+          "args_in": [],
           "args_out": [
             "6482cb73-fc21-4b3f-b8f1-2dbbaaf55e7d"
           ],
@@ -49,6 +50,7 @@
           "uid": "bdc524f2-40ff-4f4f-92e5-84aa3ee52743",
           "node_type": "Get",
           "param_name": "helloworldStr",
+          "args_in": [],
           "args_out": [
             "8f0bdc21-02fa-4718-bf5c-116e5314a0f4"
           ],
@@ -65,6 +67,8 @@
           "args_in": [
             "8f0bdc21-02fa-4718-bf5c-116e5314a0f4"
           ],
+          "args_out": [],
+          "next_nodes":[],
           "prev_nodes": [
             "bdc524f2-40ff-4f4f-92e5-84aa3ee52743"
           ]
