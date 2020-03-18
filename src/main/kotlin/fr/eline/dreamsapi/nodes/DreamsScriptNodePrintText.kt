@@ -10,13 +10,15 @@ import java.util.*
 // Author: Nourredine OCTEAU
 // éline Technologies 2020
 
-class DreamsScriptNodePrintText(override val uid: UUID,
+class DreamsScriptNodePrintText(override val x: Int,
+                                override val y: Int,
+                                override val uid: UUID,
                                 override val flags: String,
                                 override val next_nodes: ArrayList<UUID>,
                                 override val args_in: ArrayList<UUID>,
-                                override val args_out: ArrayList<UUID>) : DreamsScriptNode(uid, DreamsScriptNodeType.PrintText.typeName, flags, next_nodes, args_in, args_out){
+                                override val args_out: ArrayList<UUID>) : DreamsScriptNode(x, y, uid, DreamsScriptNodeType.PrintText.typeName, flags, next_nodes, args_in, args_out){
 
-    constructor(flags: String, next_nodes: ArrayList<UUID>, args_in: ArrayList<UUID>, args_out: ArrayList<UUID>) : this(UUID.randomUUID(), flags, next_nodes, args_in, args_out)
+    constructor(x: Int, y: Int, flags: String, next_nodes: ArrayList<UUID>, args_in: ArrayList<UUID>, args_out: ArrayList<UUID>) : this(x, y, UUID.randomUUID(), flags, next_nodes, args_in, args_out)
 
     override fun exec(scriptHost: DreamsScript, currentMethod: DreamsScriptMethod) : Int {
         addLogDebug("Exec node ${uid} of type ${nodeType.typeName}")

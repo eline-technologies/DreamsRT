@@ -17,9 +17,13 @@
   ],
   "methods": [
     {
+      "x": 0,
+      "y": 0,
       "name": "noinitname",
       "nodes": [
         {
+          "x": 0,
+          "y": 0,
           "uid": "75a6ffb0-839d-4ee0-bbff-29539bc8f671",
           "node_type": "Get",
           "param_name": "is_ok",
@@ -33,6 +37,8 @@
           ]
         },
         {
+          "x": 0,
+          "y": 0,
           "uid": "9ed21f95-424a-4c0d-8cdb-4b60abcd864c",
           "node_type": "If",
           "args_in": [
@@ -47,6 +53,8 @@
           ]
         },
         {
+          "x": 0,
+          "y": 0,
           "uid": "bdc524f2-40ff-4f4f-92e5-84aa3ee52743",
           "node_type": "Get",
           "param_name": "helloworldStr",
@@ -62,6 +70,8 @@
           ]
         },
         {
+          "x": 0,
+          "y": 0,
           "uid": "6a9d53a4-4268-4ee5-b719-0ec321c2cf1a",
           "node_type": "PrintText",
           "args_in": [

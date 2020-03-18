@@ -6,7 +6,9 @@ import java.util.*
 // Author: Nourredine OCTEAU
 // éline Technologies 2020
 
-class DreamsScriptNodeFile (val uid: UUID,
+class DreamsScriptNodeFile (val x: Int,
+                            val y: Int,
+                            val uid: UUID,
                             @SerializedName("node_type") private val _nodeType: String,
                             @SerializedName("param_name") val paramName: String,
                             val flags:String = "",
@@ -19,9 +21,9 @@ class DreamsScriptNodeFile (val uid: UUID,
 
     fun getNodeInstance(): DreamsScriptNode? {
         when (nodeType){
-            DreamsScriptNodeType.Get -> return DreamsScriptNodeGet(uid, paramName, flags?:"", next_nodes, args_in, args_out)
-            DreamsScriptNodeType.If -> return DreamsScriptNodeIf(uid, flags?:"", next_nodes, args_in, args_out)
-            DreamsScriptNodeType.PrintText -> return DreamsScriptNodePrintText(uid, flags?:"", next_nodes, args_in, args_out)
+            DreamsScriptNodeType.Get -> return DreamsScriptNodeGet(x, y, uid, paramName, flags?:"", next_nodes, args_in, args_out)
+            DreamsScriptNodeType.If -> return DreamsScriptNodeIf(x, y, uid, flags?:"", next_nodes, args_in, args_out)
+            DreamsScriptNodeType.PrintText -> return DreamsScriptNodePrintText(x, y, uid, flags?:"", next_nodes, args_in, args_out)
             else -> return null
         }
     }

@@ -9,13 +9,19 @@
     },
   "methods": [
     {
+      "x": 0,
+      "y": 0,
       "name": "#_init",
       "nodes": [
         {
+          "x": 0,
+          "y": 0,
           "node_type": "get",
           "param_name": "is_ok"
         },
         {
+          "x": 0,
+          "y": 0,
           "node_type": "if"
         }
       ]

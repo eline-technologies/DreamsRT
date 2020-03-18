@@ -9,7 +9,9 @@ import kotlin.collections.ArrayList
 // Author: Nourredine OCTEAU
 // éline Technologies 2020
 
-class DreamsScriptMethod(val name: String,
+class DreamsScriptMethod(val x: Int,
+                         val y: Int,
+                         val name: String,
                          @SerializedName("nodes") private val _nodes: List<DreamsScriptNodeFile>,
                          private var _allNodes: ArrayList<DreamsScriptNode>) {
 

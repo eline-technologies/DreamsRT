@@ -9,12 +9,15 @@ import kotlin.collections.ArrayList
 // Author: Nourredine OCTEAU
 // éline Technologies 2020
 
-open class DreamsScriptNode (open val uid: UUID,
-                             @SerializedName("node_type") private val _nodeType: String,
-                             open val flags: String,
-                             open val next_nodes: ArrayList<UUID>,
-                             open val args_in: ArrayList<UUID>,
-                             open val args_out: ArrayList<UUID>) {
+open class DreamsScriptNode (
+    open val x: Int,
+    open val y: Int,
+    open val uid: UUID,
+    @SerializedName("node_type") private val _nodeType: String,
+    open val flags: String,
+    open val next_nodes: ArrayList<UUID>,
+    open val args_in: ArrayList<UUID>,
+    open val args_out: ArrayList<UUID>) {
 
     protected var inputs: MutableMap<UUID, Any> = mutableMapOf()
 
